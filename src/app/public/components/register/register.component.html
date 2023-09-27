@@ -12,7 +12,7 @@
            with the .touched check we only display the hints if the input was touched by the users -->
           <mat-error
             *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
-            Email  é obrigatório</mat-error>
+            Email é obrigatório</mat-error>
           <mat-error
             *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
             Email deve ser válido</mat-error>
