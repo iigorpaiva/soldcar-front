@@ -5,4 +5,21 @@
 <a [routerLink]="['../../public/register']">Registrar Usuário</a>
 <br>
 <br>
-<button mat-raised-button (click)="logout()">Sair (remove token do localstorage)</button>
+<button mat-raised-button (click)="logout()">Sair</button>
+
+<app-sales></app-sales>
+
+
+<div>
+  <div class="row">
+    <div class="col-lg-4">
+      <app-activity></app-activity>
+    </div>
+    <div class="col-lg-8">
+      <app-product></app-product>
+    </div>
+  </div>
+</div>
+
+
+<app-cards></app-cards>
