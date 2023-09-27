@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard } from './auth-guard/auth.guard';
+import { AuthGuard } from './auth-guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     // Lazy Loading the protected module (all children routes will be under '/protected/{route from lazy loaded module}')
     // The guard will check if the user is having a jwt, otherwise he will be redirected to the base route
     path: 'protected',
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
     loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
   },
   {
