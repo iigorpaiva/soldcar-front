@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     // Redirects all paths that are not matching to the 'public' route/path
     path: '**',
-    redirectTo: 'public',
+    // redirectTo: 'public',
+    redirectTo: 'protected/home',
     pathMatch: 'full'
   }
 ];
