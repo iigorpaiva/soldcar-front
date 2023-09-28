@@ -1,4 +1,3 @@
-import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { NgModule } from '@angular/core';
@@ -11,6 +10,7 @@ import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatIconModule } from '@angular/material/icon';
 import { PublicRoutingModule } from './public-routing.module';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({

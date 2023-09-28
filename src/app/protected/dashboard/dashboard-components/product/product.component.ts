@@ -1,3 +1,4 @@
+import { NavigationEnd, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
@@ -27,10 +28,30 @@ export class ProductComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'assigned', 'name', 'priority', 'budget'];
   dataSource = ELEMENT_DATA;
+  currentUrl: string = ''; // Variável para armazenar a URL atual
 
-  constructor() { }
+
+  isProtectedTableRoute: boolean = false;
+
+  constructor(private router: Router) {
+    // Assinar o evento NavigationEnd
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Verificar se a URL atual é "/protected/table"
+        this.isProtectedTableRoute = event.url === '/protected/table';
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
+  // isTableRoute(): void {
+  //   this.router.events.subscribe((event) => {
+  //     if (event instanceof NavigationEnd) {
+  //       this.shouldShowRegisterButton = this.router.url === '/protected/table';
+  //       console.log("", this.router.url);
+  //     }
+  //   });
+  // }
 
 }

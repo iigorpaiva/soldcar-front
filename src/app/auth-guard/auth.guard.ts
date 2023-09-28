@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
     // --> then redirect to the base route and deny the routing
     // --> else return true and allow the routing
     if (this.jwtService.isTokenExpired()) {
-      console.log("VAI PARA LOGIN!");
       this.router.navigate(['/public/login']);
       return false;
     } else {

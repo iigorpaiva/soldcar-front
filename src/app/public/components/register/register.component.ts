@@ -1,7 +1,7 @@
-import { AuthService } from './../../services/auth.service';
-import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
 import { CustomValidators } from '../../custom-validator';
+import { AuthService } from '../../services/auth.service';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { tap } from 'rxjs';
 import { Router } from '@angular/router';
 
