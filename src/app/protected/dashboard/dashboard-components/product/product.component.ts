@@ -1,8 +1,10 @@
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { NavigationEnd, Router } from '@angular/router';
+import { RegisterComponent } from 'src/app/protected/dashboard/dashboard-components/product/register/register.component';
 import { UserService } from '../../../_services/user.service';
 import { SoldcarUser } from './../../../_models/user';
-import { NavigationEnd, Router } from '@angular/router';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-product',
@@ -11,12 +13,16 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ProductComponent implements OnInit {
 
+  animal!: string;
+  name!: string;
+
   displayedColumns: string[] = ['id', 'login', 'email', 'nome', 'sobrenome', 'role'];
   dataSource : MatTableDataSource<SoldcarUser> = new MatTableDataSource<SoldcarUser>([]);
 
   isProtectedTableRoute: boolean = false;
 
   constructor(
+    public dialog: MatDialog,
     private router: Router,
     private UserService: UserService,
     private changeDetectorRef: ChangeDetectorRef
@@ -35,9 +41,19 @@ export class ProductComponent implements OnInit {
   buscaTodosOsUsuarios() {
     this.UserService.buscarTodosOsUsuarios().subscribe((usuarios) => {
       this.dataSource = usuarios;
-      console.log("usuarios: ", usuarios);
-      console.log("datasource: ", this.dataSource.data);
       this.changeDetectorRef.detectChanges();
+    });
+  }
+
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(RegisterComponent, {
+      width: '400px',
+      data: { data: this.dataSource }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // this.dataSource = result;
     });
   }
 

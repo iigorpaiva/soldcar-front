@@ -1,14 +1,19 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCommonModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { SoldcarModule } from './../../soldcar-module';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard.component';
-import { SalesComponent } from './dashboard-components/sales/sales.component';
 import { ActivityComponent } from './dashboard-components/activity/activity.component';
-import { ProductComponent } from './dashboard-components/product/product.component';
 import { CardsComponent } from './dashboard-components/cards/cards.component';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { ProductComponent } from './dashboard-components/product/product.component';
+import { RegisterComponent } from './dashboard-components/product/register/register.component';
+import { SalesComponent } from './dashboard-components/sales/sales.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,20 @@ import { RouterModule } from '@angular/router';
     ActivityComponent,
     ProductComponent,
     CardsComponent,
+    RegisterComponent
+
   ],
   imports: [
     CommonModule,
     SoldcarModule,
     FormsModule,
     NgApexchartsModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     DashboardComponent,

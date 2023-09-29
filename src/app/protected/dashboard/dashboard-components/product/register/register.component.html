@@ -1,0 +1,70 @@
+<!-- Form Layout -->
+<div class="card">
+  <div class="card-body">
+    <h4 class="mb-32">Cadastrar usuário</h4>
+    <form [formGroup]="registerForm">
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Login</mat-label>
+        <input matInput type="text" placeholder="Nome" formControlName="login">
+        <mat-error
+          *ngIf="this.registerForm.get('login')?.touched && this.registerForm.get('login')?.hasError('required')">
+          Login é obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" placeholder="Nome" formControlName="nome">
+        <mat-error
+          *ngIf="this.registerForm.get('nome')?.touched && this.registerForm.get('nome')?.hasError('required')">
+          Nome é obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput type="text" placeholder="Sobrenome" formControlName="sobrenome">
+        <mat-error
+          *ngIf="this.registerForm.get('sobrenome')?.touched && this.registerForm.get('sobrenome')?.hasError('required')">
+          Sobrenome é obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Email" formControlName="email">
+        <mat-error
+          *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
+          Email é obrigatório</mat-error>
+        <mat-error *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
+          Email deve ser válido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Senha" formControlName="password">
+        <mat-error
+          *ngIf="this.registerForm.get('password')?.touched && this.registerForm.get('password')?.hasError('required')">
+          Senha é obrigatória</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Senha" formControlName="passwordConfirm">
+        <mat-error
+          *ngIf="this.registerForm.get('passwordConfirm')?.touched && this.registerForm.get('passwordConfirm')?.hasError('required')">
+          Repetir a mesma senha é obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-error
+        *ngIf="this.registerForm.get('passwordConfirm')?.dirty && this.registerForm.hasError('passwordsNotMatching')">
+        Senhas não estão iguais</mat-error>
+
+      <button mat-raised-button class="me-8 mb-8" color="primary" (click)="register()" type="submit"
+        [disabled]="!registerForm.valid">Registrar</button>
+
+      <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onCancel()" type="submit">Cancelar</button>
+    </form>
+  </div>
+</div>

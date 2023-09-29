@@ -1,12 +1,12 @@
-import { DashboardModule } from './dashboard/dashboard.module';
-import { SoldcarModule } from './../soldcar-module';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProtectedRoutingModule } from './protected-routing.module';
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { FullComponent } from './layouts/full/full.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
+import { SoldcarModule } from './../soldcar-module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { FullComponent } from './layouts/full/full.component';
+import { ProtectedRoutingModule } from './protected-routing.module';
 
 
 @NgModule({
