@@ -1,16 +1,16 @@
-import { LOCALSTORAGE_TOKEN_KEY, tokenGetter } from './../../app.module';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, of, switchMap, tap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Observable, catchError, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import {
   LoginRequest,
   LoginResponse,
   RegisterRequest,
   RegisterResponse,
 } from '../interfaces';
-import { environment } from 'src/environments/environment';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { LOCALSTORAGE_TOKEN_KEY, tokenGetter } from './../../app.module';
 
 // export const fakeLoginResponse: LoginResponse = {
 //   // fakeAccessToken.....should all come from real backend
@@ -66,7 +66,7 @@ export class AuthService {
         throw error; // Rethrow the error to propagate it further
       }),
       tap(() =>
-        this.snackbar.open('Login Successfull', 'Close', {
+        this.snackbar.open('Login realizado com sucesso', 'Close', {
           duration: 2000,
           horizontalPosition: 'right',
           verticalPosition: 'top',

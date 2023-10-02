@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
-import { Router } from '@angular/router';
 
 interface sidebarMenu {
   link: string;
@@ -43,6 +43,11 @@ export class FullComponent {
       icon: "users",
       menu: "Usuários",
     },
+    {
+      link: "/protected/patios",
+      icon: "flag",
+      menu: "Pátios",
+    }
   ]
 
   logout() {

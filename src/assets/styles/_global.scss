@@ -92,9 +92,20 @@ ul {
 .overflow-x-hidden {
   overflow-x: hidden;
 }
-.mdc-data-table__cell, .mdc-data-table__header-cell {
-  padding: 16px 16px 16px 16px !important;
+// .mdc-data-table__cell, .mdc-data-table__header-cell {
+//   padding: 16px 16px 16px 16px !important;
+// }
+
+/* Anule ou substitua as regras .mat-mdc-header-cell */
+.mat-card .mat-table .mat-header-cell.mdc-data-table__header-cell {
+  /* Adicione aqui suas regras personalizadas */
+  box-sizing: border-box !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  outline: none !important;
+  text-align: left !important;
 }
+
 .mat-body p,.mat-body-1 p,.mat-typography .mat-body p,.mat-typography .mat-body-1 p,.mat-typography p {
   margin: 0 0 12px
 }

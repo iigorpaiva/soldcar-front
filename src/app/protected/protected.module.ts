@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { SoldcarModule } from './../soldcar-module';
@@ -22,7 +23,8 @@ import { ProtectedRoutingModule } from './protected-routing.module';
     // flexy template
     FeatherModule.pick(allIcons),
     SoldcarModule,
-    DashboardModule
+    DashboardModule,
+    MatPaginatorModule
 
   ]
 })

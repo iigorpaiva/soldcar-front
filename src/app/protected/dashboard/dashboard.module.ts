@@ -10,6 +10,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { SoldcarModule } from './../../soldcar-module';
 import { ActivityComponent } from './dashboard-components/activity/activity.component';
 import { CardsComponent } from './dashboard-components/cards/cards.component';
+import { PatiosComponent } from './dashboard-components/patios/patios.component';
 import { ProductComponent } from './dashboard-components/product/product.component';
 import { RegisterComponent } from './dashboard-components/product/register/register.component';
 import { SalesComponent } from './dashboard-components/sales/sales.component';
@@ -22,7 +23,8 @@ import { DashboardComponent } from './dashboard.component';
     ActivityComponent,
     ProductComponent,
     CardsComponent,
-    RegisterComponent
+    RegisterComponent,
+    PatiosComponent
 
   ],
   imports: [
@@ -42,6 +44,7 @@ import { DashboardComponent } from './dashboard.component';
     SalesComponent,
     ActivityComponent,
     ProductComponent,
+    PatiosComponent
   ]
 })
 export class DashboardModule { }

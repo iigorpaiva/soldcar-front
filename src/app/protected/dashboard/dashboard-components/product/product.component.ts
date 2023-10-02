@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // this.dataSource = result;
+      this.buscaTodosOsUsuarios();
     });
   }
 

@@ -1,9 +1,10 @@
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FullComponent } from './layouts/full/full.component';
-import { ProductComponent } from './dashboard/dashboard-components/product/product.component';
 import { AuthGuard } from '../auth-guard/auth.guard';
+import { PatiosComponent } from './dashboard/dashboard-components/patios/patios.component';
+import { ProductComponent } from './dashboard/dashboard-components/product/product.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FullComponent } from './layouts/full/full.component';
 
 // Routes for child Module (protectedModule). Since protected module is lazy loaded in in the
 // app-routing.module the full path is `/protected/dashboard`
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path:"", redirectTo:"/home", pathMatch:"full"},
       {path:"home", component:DashboardComponent},
       {path:"table", component:ProductComponent},
+      {path: "patios", component:PatiosComponent}
     ]
   },
 

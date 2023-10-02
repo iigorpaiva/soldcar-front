@@ -1,21 +1,21 @@
-<!-- Cards -->
-<div class="row">
-  <div class="col-lg-4" *ngFor="let card of cards">
-    <mat-card class="overflow-hidden">
-      <div>
-        <img src="{{ card.image }}" class="w-100" alt="">
-      </div>
-      <mat-card-content>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-4" *ngFor="let card of patios">
+      <mat-card class="overflow-hidden">
         <div>
-          <p class="fs-18 lh-lg fw-medium">
-            Super awesome, Angular 12 is coming soon!
-          </p>
-          <p class="op-7">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <button mat-flat-button color="{{card.btn}}" class="fw-normal mt-4">Learn More</button>
+          <img src="{{ card.imageCapa }}" class="w-100 custom-image" alt="">
         </div>
-      </mat-card-content>
-    </mat-card>
+        <mat-card-content>
+          <div class="text-center"> <!-- Centraliza o conteúdo horizontalmente -->
+            <p class="fs-18 lh-lg fw-medium">
+              {{ card.patioNome }}
+            </p>
+            <button mat-flat-button
+            [ngClass]="getButtonClass(card.patioNome)"
+            class="fw-normal mt-4">Entrar no pátio</button>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>
