@@ -47,6 +47,21 @@ export class FullComponent {
       link: "/protected/patios",
       icon: "flag",
       menu: "Pátios",
+    },
+    {
+      link: "/protected/Documentos",
+      icon: "file-text",
+      menu: "Documentos",
+    },
+    {
+      link: "/protected/Atividades",
+      icon: "check-square",
+      menu: "Atividades Diárias",
+    },
+    {
+      link: "/protected/vendas",
+      icon: "dollar-sign",
+      menu: "Vendas",
     }
   ]
 

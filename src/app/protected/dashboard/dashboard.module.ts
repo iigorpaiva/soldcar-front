@@ -15,6 +15,7 @@ import { ProductComponent } from './dashboard-components/product/product.compone
 import { RegisterComponent } from './dashboard-components/product/register/register.component';
 import { SalesComponent } from './dashboard-components/sales/sales.component';
 import { DashboardComponent } from './dashboard.component';
+import { VendasComponent } from './dashboard-components/vendas/vendas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DashboardComponent } from './dashboard.component';
     ProductComponent,
     CardsComponent,
     RegisterComponent,
-    PatiosComponent
+    PatiosComponent,
+    VendasComponent
 
   ],
   imports: [

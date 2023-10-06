@@ -1,23 +1,21 @@
+import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatLegacyCardModule as MatCardModule, MatLegacyCardModule } from '@angular/material/legacy-card';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { PublicRoutingModule } from './public-routing.module';
-import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
   declarations: [
     // Own components
-    LoginComponent,
-    RegisterComponent
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -27,11 +25,12 @@ import { RegisterComponent } from './components/register/register.component';
     ReactiveFormsModule,
     FormsModule,
     // Angular Material Import
-    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
     MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class PublicModule { }

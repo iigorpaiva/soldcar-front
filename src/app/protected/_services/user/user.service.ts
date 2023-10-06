@@ -1,10 +1,10 @@
-import { environment } from './../../../environments/environment';
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SoldcarUser } from '../_models/user';
-import { Observable, map } from 'rxjs';
-import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
+import { Injectable } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Observable, map } from 'rxjs';
+import { environment } from '../../../../environments/environment';
+import { LOCALSTORAGE_TOKEN_KEY } from '../../../app.module';
+import { SoldcarUser } from '../../_interfaces/user-interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {

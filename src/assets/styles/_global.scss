@@ -5,7 +5,7 @@
   font-family: $bodyfont;
 }
 
-// .mat-drawer-container {
+// .mat-mdc-drawer-container {
 //   background-color: $body-color;
 // }
 
@@ -97,7 +97,7 @@ ul {
 // }
 
 /* Anule ou substitua as regras .mat-mdc-header-cell */
-.mat-card .mat-table .mat-header-cell.mdc-data-table__header-cell {
+.mat-mdc-card .mat-mdc-table .mat-mdc-header-cell.mdc-data-table__header-cell {
   /* Adicione aqui suas regras personalizadas */
   box-sizing: border-box !important;
   text-overflow: ellipsis !important;
@@ -106,10 +106,10 @@ ul {
   text-align: left !important;
 }
 
-.mat-body p,.mat-body-1 p,.mat-typography .mat-body p,.mat-typography .mat-body-1 p,.mat-typography p {
+.mat-mdc-body p,.mat-mdc-body-1 p,.mat-mdc-typography .mat-mdc-body p,.mat-mdc-typography .mat-mdc-body-1 p,.mat-mdc-typography p {
   margin: 0 0 12px
 }
-.mat-card-subtitle, .mat-mdc-card-content {
+.mat-mdc-card-subtitle, .mat-mdc-card-content {
   font-size: 14px;
 }
 .mat-mdc-card-title {
@@ -132,7 +132,7 @@ ul {
 .mat-mdc-unelevated-button:not(:disabled) {
   color: $white !important;
 }
-.mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent{
+.mat-mdc-fab.mat-mdc-accent, .mat-mdc-mini-fab.mat-mdc-accent{
   color: $white;
 }
 .mat-mdc-tab-header{

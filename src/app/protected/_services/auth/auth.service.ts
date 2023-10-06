@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, map, tap } from 'rxjs';
-import { RegisterResponse } from '../_interfaces/auth-interfaces';
-import { environment } from './../../../environments/environment';
-import { tokenGetter } from './../../app.module';
-import { RegisterRequest } from './../../public/interfaces';
+import { environment } from './../../../../environments/environment';
+import { tokenGetter } from './../../../app.module';
+import { RegisterRequest, RegisterResponse } from './../../../public/interfaces';
 
 @Injectable({
   providedIn: 'root',

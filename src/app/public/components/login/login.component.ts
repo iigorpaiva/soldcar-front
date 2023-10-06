@@ -1,11 +1,12 @@
-import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
+import { AuthService } from './../../services/auth.service';
+
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -19,8 +20,8 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router) { }
+
 
   login() {
     if (!this.loginForm.valid) {
@@ -31,7 +32,7 @@ export class LoginComponent {
       // route to protected/dashboard, if login was successfull
       tap(() => {
         this.router.navigate(['../../protected/home']);
-       })
+        })
     ).subscribe();
   }
 

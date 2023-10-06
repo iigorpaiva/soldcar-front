@@ -1,4 +1,4 @@
-﻿export class SoldcarUser {
+﻿export interface SoldcarUser {
     id?: string;
     login?: string;
     email?: string;
