@@ -9,13 +9,9 @@ interface activity {
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.component.html',
+  styleUrls: ['./activity.component.scss']
 })
 export class ActivityComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   activity: activity [] = [
     {
@@ -42,7 +38,14 @@ export class ActivityComponent implements OnInit {
       time: "09.49",
       ringColor: "ring-danger",
       message: "Payment was made of $64.95 to Michael Anderson",
-    },
+    }
   ]
-  
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+
 }
