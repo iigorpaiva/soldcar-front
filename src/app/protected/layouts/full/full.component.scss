@@ -6,3 +6,11 @@
   background-color: transparent;
 }
 
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Você pode ajustar o valor de z-index conforme necessário */
+  background-color: #FFF; /* Defina a cor de fundo desejada */
+}

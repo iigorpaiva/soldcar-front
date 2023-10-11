@@ -37,9 +37,11 @@ th.mat-header-cell {
 .custom-action-button-primary {
   background-color: #03c9d7; /* Defina a cor de fundo desejada */
   color: white; /* Define a cor do texto como branco */
+  border-radius: 0; /* Define o raio da borda para zero (retangular) */
 }
 
 .custom-action-button-warn {
   background-color: #d72303; /* Defina a cor de fundo desejada */
   color: white; /* Define a cor do texto como branco */
+  border-radius: 0; /* Define o raio da borda para zero (retangular) */
 }
