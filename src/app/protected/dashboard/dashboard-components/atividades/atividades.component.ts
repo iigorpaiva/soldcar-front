@@ -7,11 +7,11 @@ interface activity {
 }
 
 @Component({
-  selector: 'app-activity',
-  templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.scss']
+  selector: 'app-atividades',
+  templateUrl: './atividades.component.html',
+  styleUrls: ['./atividades.component.scss']
 })
-export class ActivityComponent implements OnInit {
+export class AtividadesComponent implements OnInit {
 
   activity: activity [] = [
     {

@@ -1,5 +1,5 @@
 <!-- <app-cards></app-cards> -->
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="mostrarPatios">
   <div class="row justify-content-center">
     <div class="col-lg-4" *ngFor="let patio of patioList">
       <mat-card class="overflow-hidden">
@@ -12,10 +12,14 @@
               {{ patio.nome }}
             </p>
             <button mat-flat-button
-            class="fw-normal mt-4" color="primary">Entrar no pátio</button>
+            class="fw-normal mt-4" color="primary"
+            (click)="onClickEntrarNoPatio()">Entrar no pátio</button>
             </div>
         </mat-card-content>
       </mat-card>
     </div>
   </div>
 </div>
+<!-- <router-outlet></router-outlet> -->
+
+<app-carros *ngIf="mostrarCarros"></app-carros>

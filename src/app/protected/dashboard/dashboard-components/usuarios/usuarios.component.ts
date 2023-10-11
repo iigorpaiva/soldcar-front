@@ -2,16 +2,16 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { RegisterComponent } from 'src/app/protected/dashboard/dashboard-components/product/register/register.component';
+import { RegisterComponent } from 'src/app/protected/dashboard/dashboard-components/usuarios/register/register.component';
 import { SoldcarUser } from '../../../_interfaces/user-interfaces';
-import { UserService } from './../../../_services/user/user.service';
+import { UserService } from '../../../_services/user/user.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-usuarios',
+  templateUrl: './usuarios.component.html',
+  styleUrls: ['./usuarios.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class UsuariosComponent implements OnInit {
 
   animal!: string;
   name!: string;
@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
     private UserService: UserService,
     private changeDetectorRef: ChangeDetectorRef
     ) {
-    this.isProtectedTableRoute = this.router.url === '/protected/table';
+    this.isProtectedTableRoute = this.router.url === '/protected/usuarios';
   }
 
   ngOnInit(): void {

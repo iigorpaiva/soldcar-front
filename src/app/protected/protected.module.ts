@@ -25,7 +25,6 @@ import { ProtectedRoutingModule } from './protected-routing.module';
     SoldcarModule,
     DashboardModule,
     MatPaginatorModule
-
   ]
 })
 export class ProtectedModule { }

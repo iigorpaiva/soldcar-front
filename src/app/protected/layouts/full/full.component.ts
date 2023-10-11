@@ -47,7 +47,7 @@ export class FullComponent {
       menu: "Dashboard",
     },
     {
-      link: "/protected/table",
+      link: "/protected/usuarios",
       icon: "users",
       menu: "Usuários",
     },

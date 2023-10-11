@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth-guard/auth.guard';
+import { CarrosComponent } from './dashboard/dashboard-components/patios/carros/carros.component';
 import { PatiosComponent } from './dashboard/dashboard-components/patios/patios.component';
-import { ProductComponent } from './dashboard/dashboard-components/product/product.component';
+import { UsuariosComponent } from './dashboard/dashboard-components/usuarios/usuarios.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FullComponent } from './layouts/full/full.component';
 
@@ -16,8 +17,8 @@ const routes: Routes = [
     children: [
       {path:"", redirectTo:"/home", pathMatch:"full"},
       {path:"home", component:DashboardComponent},
-      {path:"table", component:ProductComponent},
-      {path: "patios", component:PatiosComponent}
+      {path:"usuarios", component:UsuariosComponent},
+      {path: "patios", component:PatiosComponent, children: [ {path: "carros", component: CarrosComponent }]}
     ]
   },
 

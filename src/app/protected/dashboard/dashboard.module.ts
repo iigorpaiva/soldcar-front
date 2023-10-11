@@ -8,12 +8,12 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { SoldcarModule } from './../../soldcar-module';
-import { ActivityComponent } from './dashboard-components/activity/activity.component';
-import { CardsComponent } from './dashboard-components/cards/cards.component';
+import { AtividadesComponent } from './dashboard-components/atividades/atividades.component';
+import { CarrosComponent } from './dashboard-components/patios/carros/carros.component';
 import { PatiosComponent } from './dashboard-components/patios/patios.component';
-import { ProductComponent } from './dashboard-components/product/product.component';
-import { RegisterComponent } from './dashboard-components/product/register/register.component';
 import { SalesComponent } from './dashboard-components/sales/sales.component';
+import { RegisterComponent } from './dashboard-components/usuarios/register/register.component';
+import { UsuariosComponent } from './dashboard-components/usuarios/usuarios.component';
 import { VendasComponent } from './dashboard-components/vendas/vendas.component';
 import { DashboardComponent } from './dashboard.component';
 
@@ -21,12 +21,12 @@ import { DashboardComponent } from './dashboard.component';
   declarations: [
     DashboardComponent,
     SalesComponent,
-    ActivityComponent,
-    ProductComponent,
-    CardsComponent,
+    AtividadesComponent,
+    UsuariosComponent,
     RegisterComponent,
     PatiosComponent,
-    VendasComponent
+    VendasComponent,
+    CarrosComponent
 
   ],
   imports: [
@@ -44,8 +44,8 @@ import { DashboardComponent } from './dashboard.component';
   exports: [
     DashboardComponent,
     SalesComponent,
-    ActivityComponent,
-    ProductComponent,
+    AtividadesComponent,
+    UsuariosComponent,
     PatiosComponent
   ]
 })
