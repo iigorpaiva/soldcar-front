@@ -17,27 +17,27 @@ export class ActivityComponent implements OnInit {
     {
       time: "09.50",
       ringColor: "ring-success",
-      message: "Meeting with John",
+      message: "Encontro com Igor",
     },
     {
       time: "09.46",
       ringColor: "ring-primary",
-      message: "Payment received from John Doe of $385.90",
+      message: "Pagamento recebido de Marcos R$: 385,90",
     },
     {
       time: "09.47",
       ringColor: "ring-info",
-      message: "Project Meeting",
+      message: "Reunião de projeto",
     },
     {
       time: "09.48",
       ringColor: "ring-warning",
-      message: "New Sale recorded #ML-3467",
+      message: "Nova venda registrada: Gol (OXO 5B27)",
     },
     {
       time: "09.49",
       ringColor: "ring-danger",
-      message: "Payment was made of $64.95 to Michael Anderson",
+      message: "Pagamento recebido de Anderson",
     }
   ]
 

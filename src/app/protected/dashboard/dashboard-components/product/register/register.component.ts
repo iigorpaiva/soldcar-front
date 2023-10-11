@@ -41,7 +41,6 @@ export class RegisterComponent {
     this.authService.register(this.registerForm.value).pipe(
       tap(() => {
         this.dialogRef.close();
-        // Após o registro bem-sucedido, notifique o componente ProductComponent
       })
     ).subscribe();
   }

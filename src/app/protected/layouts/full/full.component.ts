@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
+import { AuthService } from 'src/app/public/services/auth.service';
 
 interface sidebarMenu {
   link: string;
@@ -18,6 +19,8 @@ interface sidebarMenu {
 })
 export class FullComponent {
 
+  userLoginName!: string;
+  userDetail!: string;
   search: boolean = false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -28,7 +31,12 @@ export class FullComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router) { }
+    private router: Router,
+    private authService: AuthService) { }
+
+  ngOnInit(){
+    this.checkUser();
+  }
 
   routerActive: string = "activelink";
 
@@ -69,6 +77,12 @@ export class FullComponent {
     // Removes the jwt token from the local storage, so the user gets logged out & then navigate back to the "public" routes
     localStorage.removeItem(LOCALSTORAGE_TOKEN_KEY);
     this.router.navigate(['public/login']);
+  }
+
+  checkUser(){
+    this.userDetail = this.authService.getLoggedInUser();
+    const subValue = this.userDetail['sub'];
+    this.userLoginName = `${subValue}`;
   }
 
 }

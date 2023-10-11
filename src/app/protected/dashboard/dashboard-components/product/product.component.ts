@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RegisterComponent } from 'src/app/protected/dashboard/dashboard-components/product/register/register.component';
 import { SoldcarUser } from '../../../_interfaces/user-interfaces';
 import { UserService } from './../../../_services/user/user.service';
@@ -27,11 +27,7 @@ export class ProductComponent implements OnInit {
     private UserService: UserService,
     private changeDetectorRef: ChangeDetectorRef
     ) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.isProtectedTableRoute = event.url === '/protected/table';
-      }
-    });
+    this.isProtectedTableRoute = this.router.url === '/protected/table';
   }
 
   ngOnInit(): void {

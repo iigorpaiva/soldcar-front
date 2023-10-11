@@ -14,8 +14,8 @@ import { PatiosComponent } from './dashboard-components/patios/patios.component'
 import { ProductComponent } from './dashboard-components/product/product.component';
 import { RegisterComponent } from './dashboard-components/product/register/register.component';
 import { SalesComponent } from './dashboard-components/sales/sales.component';
-import { DashboardComponent } from './dashboard.component';
 import { VendasComponent } from './dashboard-components/vendas/vendas.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [

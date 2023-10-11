@@ -1,5 +1,5 @@
 <!-- Form Layout -->
-<div class="card">
+<!-- <div class="card"> -->
   <div class="card-body">
     <h4 class="mb-32">Cadastrar usuário</h4>
     <form [formGroup]="registerForm">
@@ -42,7 +42,7 @@
       </mat-form-field>
 
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Password</mat-label>
+        <mat-label>Senha</mat-label>
         <input matInput type="password" placeholder="Senha" formControlName="password">
         <mat-error
           *ngIf="this.registerForm.get('password')?.touched && this.registerForm.get('password')?.hasError('required')">
@@ -50,11 +50,11 @@
       </mat-form-field>
 
       <mat-form-field class="w-100 fs-16" appearance="outline">
-        <mat-label>Password</mat-label>
+        <mat-label>Senha</mat-label>
         <input matInput type="password" placeholder="Senha" formControlName="passwordConfirm">
         <mat-error
           *ngIf="this.registerForm.get('passwordConfirm')?.touched && this.registerForm.get('passwordConfirm')?.hasError('required')">
-          Repetir a mesma senha é obrigatório</mat-error>
+          Repetir a senha é obrigatório</mat-error>
       </mat-form-field>
 
       <mat-error
@@ -67,4 +67,4 @@
       <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onCancel()" type="submit">Cancelar</button>
     </form>
   </div>
-</div>
+<!-- </div> -->
