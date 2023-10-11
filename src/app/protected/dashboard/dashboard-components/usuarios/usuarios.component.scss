@@ -27,3 +27,19 @@ th.mat-header-cell {
 .mat-raised-button {
   color: white;
 }
+
+.small-action-button {
+  font-size: 14px; /* Defina o tamanho de fonte desejado */
+  padding: 4px; /* Ajuste o preenchimento conforme necessário */
+  min-width: auto; /* Ou ajuste o tamanho mínimo conforme necessário */
+}
+
+.custom-action-button-primary {
+  background-color: #03c9d7; /* Defina a cor de fundo desejada */
+  color: white; /* Define a cor do texto como branco */
+}
+
+.custom-action-button-warn {
+  background-color: #d72303; /* Defina a cor de fundo desejada */
+  color: white; /* Define a cor do texto como branco */
+}

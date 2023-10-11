@@ -12,7 +12,7 @@ import { AtividadesComponent } from './dashboard-components/atividades/atividade
 import { CarrosComponent } from './dashboard-components/patios/carros/carros.component';
 import { PatiosComponent } from './dashboard-components/patios/patios.component';
 import { SalesComponent } from './dashboard-components/sales/sales.component';
-import { RegisterComponent } from './dashboard-components/usuarios/register/register.component';
+import { CadastroComponent } from './dashboard-components/usuarios/cadastro-dialog/cadastro-dialog.component';
 import { UsuariosComponent } from './dashboard-components/usuarios/usuarios.component';
 import { VendasComponent } from './dashboard-components/vendas/vendas.component';
 import { DashboardComponent } from './dashboard.component';
@@ -23,7 +23,7 @@ import { DashboardComponent } from './dashboard.component';
     SalesComponent,
     AtividadesComponent,
     UsuariosComponent,
-    RegisterComponent,
+    CadastroComponent,
     PatiosComponent,
     VendasComponent,
     CarrosComponent

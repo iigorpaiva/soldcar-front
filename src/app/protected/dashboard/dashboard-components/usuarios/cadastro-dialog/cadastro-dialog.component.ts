@@ -8,9 +8,9 @@ import { AuthService } from 'src/app/public/services/auth.service';
 
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html'})
-export class RegisterComponent {
+  selector: 'app-cadastro',
+  templateUrl: './cadastro-dialog.component.html'})
+export class CadastroComponent {
 
   registerForm = new UntypedFormGroup({
     email: new UntypedFormControl(null, [Validators.required, Validators.email]),
@@ -25,7 +25,7 @@ export class RegisterComponent {
   )
 
   constructor(
-    public dialogRef: MatDialogRef<RegisterComponent>,
+    public dialogRef: MatDialogRef<CadastroComponent>,
     private authService: AuthService,
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
