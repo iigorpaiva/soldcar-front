@@ -34,7 +34,7 @@ export class AuthService {
     ).pipe(
       map((response: any) => response), // Transforma a resposta em um objeto RegisterResponse
       tap((res: RegisterResponse) =>
-        this.snackbar.open(`User created successfully`, 'Close', {
+        this.snackbar.open(`Usuário criado com sucesso.`, 'Fechar', {
           duration: 2000,
           horizontalPosition: 'right',
           verticalPosition: 'top'

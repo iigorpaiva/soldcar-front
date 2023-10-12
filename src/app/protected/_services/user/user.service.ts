@@ -23,4 +23,15 @@ export class UserService {
     return this.http.get<SoldcarUser[]>(`${environment.apiUrl}/users/buscarTodosOsUsuarios`, httpOptions)
       .pipe(map(usuarios => new MatTableDataSource<SoldcarUser>(usuarios)));
   }
-}
+
+  excluirUsuario(userId: number): Observable<void> {
+    const token = localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    };
+
+    return this.http.delete<void>(`${environment.apiUrl}/users/${userId}`, httpOptions);
+  }}

@@ -1,1 +1,14 @@
-<p>delecao-dialog works!</p>
+<div class="card-body">
+
+  <h4 class="mb-32">Excluir usuário</h4>
+  <p>Você tem certeza de que deseja excluir este usuário? </p>
+  <br>
+  <p>{{ data.idUsuario }} - {{ data.nomeUsuario }}</p>
+  <br>
+
+  <!-- <button mat-raised-button color="warn" (click)="confirm()">Confirmar</button> -->
+  <!-- <button mat-button (click)="cancel()">Cancelar</button> -->
+  <button mat-raised-button class="me-8 mb-8" color="warn" type="submit" (click)="confirmar(data.idUsuario)">Confirmar</button>
+  <button mat-raised-button class="me-8 mb-8" color="white" type="submit" (click)="cancelar()">Cancelar</button>
+
+</div>

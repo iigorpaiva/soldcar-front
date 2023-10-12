@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -7,10 +7,9 @@ import { environment } from 'src/environments/environment';
 import {
   LoginRequest,
   LoginResponse,
-  RegisterRequest,
-  RegisterResponse,
+  RegisterResponse
 } from '../interfaces';
-import { LOCALSTORAGE_TOKEN_KEY, tokenGetter } from './../../app.module';
+import { LOCALSTORAGE_TOKEN_KEY } from './../../app.module';
 
 // export const fakeLoginResponse: LoginResponse = {
 //   // fakeAccessToken.....should all come from real backend
@@ -41,12 +40,6 @@ export class AuthService {
   ) {}
 
   login(loginRequest: LoginRequest): Observable<LoginResponse> {
-    // return of(fakeLoginResponse).pipe(
-    //   tap((res: LoginResponse) => localStorage.setItem(LOCALSTORAGE_TOKEN_KEY, res.accessToken)),
-    //   tap(() => this.snackbar.open('Login Successfull', 'Close', {
-    //     duration: 2000, horizontalPosition: 'right', verticalPosition: 'top'
-    //   }))
-    // );
     return this.http
     .post<LoginResponse>(`${environment.apiUrl}/auth/login`, loginRequest)
     .pipe(
@@ -66,23 +59,6 @@ export class AuthService {
         })
       )
     );
-  }
-
-  register(registerRequest: RegisterRequest): Observable<RegisterResponse> {
-    let httpOptions;
-    if(tokenGetter()){
-      httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${tokenGetter()}`,
-        }),
-      };
-    }
-    return this.http.post<RegisterResponse>(`${environment.apiUrl}/auth/register`, registerRequest, httpOptions).pipe(
-    tap((res: RegisterResponse) => this.snackbar.open(`User created successfully`, 'Fechar', {
-     duration: 2000, horizontalPosition: 'right', verticalPosition: 'top'
-    }))
-    )
   }
 
   /*

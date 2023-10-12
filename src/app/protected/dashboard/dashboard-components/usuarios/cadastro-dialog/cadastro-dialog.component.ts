@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { CustomValidators } from 'src/app/public/custom-validator';
-import { AuthService } from 'src/app/public/services/auth.service';
+import { AuthService } from './../../../../_services/auth/auth.service';
 
 
 @Component({

@@ -3,16 +3,17 @@
 <a [routerLink]="['../../public/login']">Fazer login</a>
 <br> -->
 <!-- <a [routerLink]="['../../public/register']">Registrar Usuário</a> -->
+<div class="dashboard-content">
+  <app-sales></app-sales>
 
-<app-sales></app-sales>
+  <div class="row">
+    <div class="col-lg-4">
+      <app-atividades></app-atividades>
+    </div>
+    <div class="col-lg-8">
+      <app-usuarios></app-usuarios>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-lg-4">
-    <app-atividades></app-atividades>
-  </div>
-  <div class="col-lg-8">
-    <app-usuarios></app-usuarios>
-  </div>
+  <app-patios></app-patios>
 </div>
-
-<app-patios></app-patios>
