@@ -15,9 +15,7 @@ export class DelecaoDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<DelecaoDialogComponent>,
     private userService: UserService,
-    @Inject(MAT_DIALOG_DATA) public data: { idUsuario: number, nomeUsuario: string }) {
-      this.userId = data.idUsuario;
-      this.loginUsuario = data.nomeUsuario;
+    @Inject(MAT_DIALOG_DATA) public data: { id: number, login: string }) {
     }
 
   confirmar(userId: number): void {

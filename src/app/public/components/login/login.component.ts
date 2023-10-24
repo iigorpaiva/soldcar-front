@@ -27,7 +27,6 @@ export class LoginComponent {
     if (!this.loginForm.valid) {
       return;
     }
-    console.log("valor formulário: ", JSON.stringify(this.loginForm.value));
     this.authService.login(this.loginForm.value).pipe(
       // route to protected/dashboard, if login was successfull
       tap(() => {

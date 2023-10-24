@@ -6,6 +6,7 @@ import { CadastroComponent } from 'src/app/protected/dashboard/dashboard-compone
 import { SoldcarUser } from '../../../_interfaces/user-interfaces';
 import { UserService } from '../../../_services/user/user.service';
 import { DelecaoDialogComponent } from './delecao-dialog/delecao-dialog.component';
+import { EdicaoUsuarioDialogComponent } from './edicao-usuario-dialog/edicao-usuario-dialog.component';
 
 @Component({
   selector: 'app-usuarios',
@@ -55,17 +56,27 @@ export class UsuariosComponent implements OnInit {
     });
   }
 
-  abrirDelecaoDialog(idUsuario: number, nomeUsuario: string): void {
-    if (idUsuario !== null) {
+  abrirDialogEdicao(id: number, login: string, email: string, nome: string, sobrenome: string, role: string ): void {
+    let dialogRef = this.dialog.open(EdicaoUsuarioDialogComponent, {
+      width: '400px',
+      data: { id, login, email, nome, sobrenome, role }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.buscaTodosOsUsuarios();
+    });
+  }
+
+  abrirDialogDelecao(id: number, login: string): void {
+    if (id !== null) {
       const dialogRef = this.dialog.open(DelecaoDialogComponent, {
-        data: { idUsuario, nomeUsuario }
+        data: { id, login }
       });
 
       dialogRef.afterClosed().subscribe(result => {
         this.buscaTodosOsUsuarios();
       });
     } else {
-      // Lidar com o caso em que nenhuma linha foi selecionada
       console.log('Nenhum usuário selecionado para exclusão.');
     }
 

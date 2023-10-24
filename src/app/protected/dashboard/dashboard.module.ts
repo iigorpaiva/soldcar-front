@@ -17,6 +17,7 @@ import { DelecaoDialogComponent } from './dashboard-components/usuarios/delecao-
 import { UsuariosComponent } from './dashboard-components/usuarios/usuarios.component';
 import { VendasComponent } from './dashboard-components/vendas/vendas.component';
 import { DashboardComponent } from './dashboard.component';
+import { EdicaoUsuarioDialogComponent } from './dashboard-components/usuarios/edicao-usuario-dialog/edicao-usuario-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DashboardComponent } from './dashboard.component';
     DelecaoDialogComponent,
     PatiosComponent,
     VendasComponent,
-    CarrosComponent
+    CarrosComponent,
+    EdicaoUsuarioDialogComponent
 
   ],
   imports: [

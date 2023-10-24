@@ -15,7 +15,6 @@ export class DashboardComponent {
     // Inscreva-se no evento NavigationEnd
     this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
-      console.log('Rota atual:', event.url);
     }
   });
   }

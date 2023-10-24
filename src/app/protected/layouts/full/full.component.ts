@@ -56,21 +56,21 @@ export class FullComponent {
       icon: "flag",
       menu: "Pátios",
     },
-    {
-      link: "/protected/Documentos",
-      icon: "file-text",
-      menu: "Documentos",
-    },
-    {
-      link: "/protected/Atividades",
-      icon: "check-square",
-      menu: "Atividades Diárias",
-    },
-    {
-      link: "/protected/vendas",
-      icon: "dollar-sign",
-      menu: "Vendas",
-    }
+    // {
+    //   link: "/protected/Documentos",
+    //   icon: "file-text",
+    //   menu: "Documentos",
+    // },
+    // {
+    //   link: "/protected/Atividades",
+    //   icon: "check-square",
+    //   menu: "Atividades Diárias",
+    // },
+    // {
+    //   link: "/protected/vendas",
+    //   icon: "dollar-sign",
+    //   menu: "Vendas",
+    // }
   ]
 
   logout() {

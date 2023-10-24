@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 export const LOCALSTORAGE_TOKEN_KEY = 'angular_material_login_and_register_example';
+export const LOCALSTORAGE_USER_ROLE = 'user_role';
 
 export function tokenGetter() {
   return localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);

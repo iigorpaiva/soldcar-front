@@ -6,10 +6,10 @@ import { Observable, catchError, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {
   LoginRequest,
-  LoginResponse,
+  LoginResponseOb,
   RegisterResponse
 } from '../interfaces';
-import { LOCALSTORAGE_TOKEN_KEY } from './../../app.module';
+import { LOCALSTORAGE_TOKEN_KEY, LOCALSTORAGE_USER_ROLE } from './../../app.module';
 
 // export const fakeLoginResponse: LoginResponse = {
 //   // fakeAccessToken.....should all come from real backend
@@ -39,23 +39,23 @@ export class AuthService {
     private jwtService: JwtHelperService
   ) {}
 
-  login(loginRequest: LoginRequest): Observable<LoginResponse> {
+  login(loginRequest: LoginRequest): Observable<LoginResponseOb> {
     return this.http
-    .post<LoginResponse>(`${environment.apiUrl}/auth/login`, loginRequest)
+    .post<LoginResponseOb>(`${environment.apiUrl}/auth/login`, loginRequest)
     .pipe(
-      tap((res: LoginResponse) => {
-        console.log('Login success:', res);
+      tap((res: LoginResponseOb) => {
         localStorage.setItem(LOCALSTORAGE_TOKEN_KEY, res.token);
+        localStorage.setItem(LOCALSTORAGE_USER_ROLE, res.userRole);
       }),
       catchError((error) => {
-        console.error('Error in login request:', JSON.stringify(error));
+        console.error('Erro na requisição de login:', JSON.stringify(error));
         throw error; // Rethrow the error to propagate it further
       }),
       tap(() =>
         this.snackbar.open('Login realizado com sucesso', 'Fechar', {
           duration: 2000,
           horizontalPosition: 'right',
-          verticalPosition: 'top',
+          verticalPosition: 'top'
         })
       )
     );

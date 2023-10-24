@@ -1,0 +1,47 @@
+<!-- Form Layout -->
+<!-- <div class="card"> -->
+  <div class="card-body">
+    <h4 class="mb-32">Editar usuário - {{ data.login }} </h4>
+    <form [formGroup]="registerForm">
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Login</mat-label>
+        <input matInput type="text" [placeholder]="data.login" formControlName="login">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" [placeholder]="data.nome" formControlName="nome">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput type="text" [placeholder]="data.sobrenome" formControlName="sobrenome">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [placeholder]="data.email" formControlName="email">
+        <mat-error
+          *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
+          Email é obrigatório</mat-error>
+        <mat-error *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
+          Email deve ser válido</mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="USER">Usuário</mat-option>
+          <mat-option value="ADMIN">Administrador</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+
+      <button mat-raised-button class="me-8 mb-8" color="primary" type="submit"
+        [disabled]="!registerForm.valid" (click)="editarUsuario()">Editar</button>
+
+      <button mat-raised-button class="me-8 mb-8" color="warn" (click)="onCancel()" type="submit">Cancelar</button>
+    </form>
+  </div>
+<!-- </div> -->

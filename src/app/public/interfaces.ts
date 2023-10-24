@@ -19,6 +19,11 @@ export interface LoginResponse {
   // tokenType: string;
 }
 
+export interface LoginResponseOb{
+  token: string;
+  userRole: string;
+}
+
 /*
 Interface for the Login Request (can look different, based on your backend api)
 */
