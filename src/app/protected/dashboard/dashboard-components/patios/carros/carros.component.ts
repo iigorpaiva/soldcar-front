@@ -19,7 +19,8 @@ export class CarrosComponent {
   }
 
   onClickMostraPatios(){
-    this.mostrarCarros = false;
-    this.router.navigate(['/protected/patios'])
+    this.router.navigate(['/protected/patios/refresh']).then(() => {
+      this.router.navigate(['/protected/patios']);
+    });
   }
 }
