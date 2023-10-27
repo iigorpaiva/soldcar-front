@@ -1,4 +1,4 @@
-export interface CarroResponseDTO {
+export interface CarroResponse {
   modelo: string;
   marca: string;
   anoFabricacao: string;

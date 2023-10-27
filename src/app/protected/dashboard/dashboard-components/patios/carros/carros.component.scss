@@ -2,3 +2,25 @@
 .carros-content {
   padding-top: 64px; /* Ajuste isso para a altura do seu mat-toolbar */
 }
+
+.carros-catalog {
+  display: flex; /* Torna os cards filhos flexíveis */
+  flex-wrap: wrap; /* Faz os cards quebrarem para a próxima linha quando não couberem na largura */
+  gap: 20px; /* Define um espaçamento entre os cards (ajuste conforme necessário) */
+}
+
+.carro-card {
+  flex: 0 0 calc(33.33% - 20px); /* Define a largura desejada para cada card (ajuste conforme necessário) */
+  /* O cálculo acima assume que você deseja exibir 3 cards por linha, com um espaçamento de 20px entre eles */
+}
+
+.card {
+  /* Estilize o card conforme necessário */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.card-body {
+  /* Estilize o corpo do card conforme necessário */
+}

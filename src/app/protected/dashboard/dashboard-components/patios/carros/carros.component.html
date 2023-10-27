@@ -1,7 +1,18 @@
 <div class="carros-content" *ngIf="mostrarCarros">
-  <p>carros works!</p>
   <p>ID do Pátio: {{ patioId }}</p>
   <button mat-flat-button
-  class="fw-normal mt-4" color="primary"
-  (click)="onCliclMostrarPatios()">Voltar para os pátios</button>
+    class="fw-normal mt-4" color="primary"
+    (click)="onClickMostrarPatios()">Voltar para os pátios</button>
+
+  <div class="carros-catalog">
+    <div class="carro-card" *ngFor="let carro of carroList">
+      <!-- Crie um card para cada carro na lista -->
+      <div class="card">
+        <div class="card-body">
+          <p>Modelo: {{ carro.modelo }}</p>
+          <!-- Adicione outras informações do carro aqui -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
