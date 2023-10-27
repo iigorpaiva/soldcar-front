@@ -14,13 +14,13 @@
             </p>
             <button mat-flat-button
             class="fw-normal mt-4" color="primary"
-            (click)="onClickEntrarNoPatio()">Entrar no pátio</button>
-            </div>
+            (click)="onClickEntrarNoPatio(patio.id)">Entrar no pátio</button>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
   </div>
 </div>
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 
 <app-carros *ngIf="mostrarCarros"></app-carros>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavigationService } from '../../../_services/navegacao/navigationService.service';
 import { PatioResponse } from './../../../_interfaces/patio-Interfaces';
 import { PatioService } from './../../../_services/patio/patio.service';
 
@@ -19,7 +20,9 @@ export class PatiosComponent {
   constructor(
     private patioService  : PatioService,
     public dialog: MatDialog,
-    private router : Router){
+    private router : Router,
+    private route : ActivatedRoute,
+    private navigationService : NavigationService){
   }
 
   ngOnInit(){
@@ -33,10 +36,12 @@ export class PatiosComponent {
     })
   }
 
-  onClickEntrarNoPatio(){
+  onClickEntrarNoPatio(patioId: Number){
     this.mostrarPatios = false;
     this.mostrarCarros = true;
-    this.router.navigate(['protected/patios/carros'])
+    // this.router.navigate(['carros', patioId], { relativeTo: this.route });
+    this.navigationService.navigateToCarros(patioId);
+
   }
 
 }

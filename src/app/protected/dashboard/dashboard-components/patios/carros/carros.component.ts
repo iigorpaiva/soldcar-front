@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carros',
@@ -9,16 +9,24 @@ import { Router } from '@angular/router';
 export class CarrosComponent {
 
   mostrarCarros : Boolean = false;
+  patioId : Number | undefined;
+
+  private route = inject(ActivatedRoute);
+
+  constructor(
+    private router : Router){
+  }
 
   ngOnInit(){
     this.mostrarCarros = true;
-  }
 
-  constructor(private router : Router){
+    this.route.params.subscribe((params) => {
 
-  }
+    this.patioId = +params['patioId'];
+    console.log('ID do Pátio:', this.patioId);
+  });}
 
-  onClickMostraPatios(){
+  onCliclMostrarPatios(){
     this.router.navigate(['/protected/patios/refresh']).then(() => {
       this.router.navigate(['/protected/patios']);
     });

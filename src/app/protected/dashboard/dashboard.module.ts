@@ -11,24 +11,20 @@ import { SoldcarModule } from './../../soldcar-module';
 import { AtividadesComponent } from './dashboard-components/atividades/atividades.component';
 import { CarrosComponent } from './dashboard-components/patios/carros/carros.component';
 import { PatiosComponent } from './dashboard-components/patios/patios.component';
-import { SalesComponent } from './dashboard-components/sales/sales.component';
 import { CadastroComponent } from './dashboard-components/usuarios/cadastro-dialog/cadastro-dialog.component';
 import { DelecaoDialogComponent } from './dashboard-components/usuarios/delecao-dialog/delecao-dialog.component';
-import { UsuariosComponent } from './dashboard-components/usuarios/usuarios.component';
-import { VendasComponent } from './dashboard-components/vendas/vendas.component';
-import { DashboardComponent } from './dashboard.component';
 import { EdicaoUsuarioDialogComponent } from './dashboard-components/usuarios/edicao-usuario-dialog/edicao-usuario-dialog.component';
+import { UsuariosComponent } from './dashboard-components/usuarios/usuarios.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    SalesComponent,
     AtividadesComponent,
     UsuariosComponent,
     CadastroComponent,
     DelecaoDialogComponent,
     PatiosComponent,
-    VendasComponent,
     CarrosComponent,
     EdicaoUsuarioDialogComponent
 
@@ -47,7 +43,6 @@ import { EdicaoUsuarioDialogComponent } from './dashboard-components/usuarios/ed
   ],
   exports: [
     DashboardComponent,
-    SalesComponent,
     AtividadesComponent,
     UsuariosComponent,
     PatiosComponent

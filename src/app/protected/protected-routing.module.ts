@@ -18,7 +18,8 @@ const routes: Routes = [
       {path:"", redirectTo:"/home", pathMatch:"full"},
       {path:"home", component:DashboardComponent},
       {path:"usuarios", component:UsuariosComponent},
-      {path: "patios", component:PatiosComponent, children: [ {path: "carros", component: CarrosComponent }]}
+      {path: "patios", component:PatiosComponent},
+      {path: "patios/carros/:patioId", component: CarrosComponent }
     ]
   },
 

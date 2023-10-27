@@ -1,6 +1,7 @@
-<div *ngIf="mostrarCarros">
+<div class="carros-content" *ngIf="mostrarCarros">
   <p>carros works!</p>
+  <p>ID do Pátio: {{ patioId }}</p>
   <button mat-flat-button
   class="fw-normal mt-4" color="primary"
-  (click)="onClickMostraPatios()">Voltar para os pátios</button>
+  (click)="onCliclMostrarPatios()">Voltar para os pátios</button>
 </div>
