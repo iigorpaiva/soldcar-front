@@ -6,4 +6,5 @@ export interface CarroResponse {
   cor: string;
   patioId: number;
   caminhoFotos: string;
+  fotos: FileList; // FileList é o tipo para lista de arquivos, é semelhante a List<MultipartFile>
 }

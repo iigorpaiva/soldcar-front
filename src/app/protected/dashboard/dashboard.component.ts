@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
+import { LOCALSTORAGE_TOKEN_KEY, LOCALSTORAGE_USER_ROLE } from 'src/app/app.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,14 +9,18 @@ import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
 })
 export class DashboardComponent {
 
+  userRoles !: string[];
+  isUserAdmin : boolean | undefined;
+
   constructor(
-    private router: Router
-  ) {
-    // Inscreva-se no evento NavigationEnd
+    private router : Router  ) {
+
+    this.getUserRoles();
+
     this.router.events.subscribe((event) => {
-    if (event instanceof NavigationEnd) {
-    }
-  });
+    if (event instanceof NavigationEnd) {}
+    });
+
   }
 
   logout() {
@@ -24,4 +28,13 @@ export class DashboardComponent {
     this.router.navigate(['../../']);
   }
 
+  getUserRoles(){
+    const userRoles = localStorage.getItem(LOCALSTORAGE_USER_ROLE);
+    const clonedRoles = userRoles?.slice(1, -1);
+    const rolesArray = clonedRoles?.split(', ');
+
+    this.isUserAdmin = rolesArray?.includes('ROLE_ADMIN');
+
+    return rolesArray || [];
+  }
 }

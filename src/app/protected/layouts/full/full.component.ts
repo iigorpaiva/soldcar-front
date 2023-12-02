@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { LOCALSTORAGE_TOKEN_KEY } from 'src/app/app.module';
+import { LOCALSTORAGE_TOKEN_KEY, LOCALSTORAGE_USER_ROLE } from 'src/app/app.module';
 import { AuthService } from 'src/app/public/services/auth.service';
 
 interface sidebarMenu {
@@ -23,6 +23,9 @@ export class FullComponent {
   userDetail!: string;
   search: boolean = false;
 
+  isUserAdmin : boolean | undefined;
+
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -32,7 +35,9 @@ export class FullComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-    private authService: AuthService) { }
+    private authService: AuthService) {
+      this.getUserRoles();
+    }
 
   ngOnInit(){
     this.checkUser();
@@ -55,22 +60,7 @@ export class FullComponent {
       link: "/protected/patios",
       icon: "flag",
       menu: "Pátios",
-    },
-    // {
-    //   link: "/protected/Documentos",
-    //   icon: "file-text",
-    //   menu: "Documentos",
-    // },
-    // {
-    //   link: "/protected/Atividades",
-    //   icon: "check-square",
-    //   menu: "Atividades Diárias",
-    // },
-    // {
-    //   link: "/protected/vendas",
-    //   icon: "dollar-sign",
-    //   menu: "Vendas",
-    // }
+    }
   ]
 
   logout() {
@@ -83,6 +73,16 @@ export class FullComponent {
     this.userDetail = this.authService.getLoggedInUser();
     const subValue = this.userDetail['sub'];
     this.userLoginName = `${subValue}`;
+  }
+
+  getUserRoles(){
+    const userRoles = localStorage.getItem(LOCALSTORAGE_USER_ROLE);
+    const clonedRoles = userRoles?.slice(1, -1);
+    const rolesArray = clonedRoles?.split(', ');
+
+    this.isUserAdmin = rolesArray?.includes('ROLE_ADMIN');
+
+    return rolesArray || [];
   }
 
 }

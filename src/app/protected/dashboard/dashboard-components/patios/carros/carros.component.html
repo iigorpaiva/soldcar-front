@@ -1,5 +1,5 @@
 <div class="carros-content" *ngIf="mostrarCarros">
-  <p>ID do Pátio: {{ patioId }}</p>
+  <!-- <p>ID do Pátio: {{ patioId }}</p> -->
   <button mat-flat-button
     class="fw-normal mt-4" color="primary"
     (click)="onClickMostrarPatios()">Voltar para os pátios</button>
@@ -11,6 +11,7 @@
         <div class="card-body">
           <p>Modelo: {{ carro.modelo }}</p>
           <!-- Adicione outras informações do carro aqui -->
+          <img *ngIf="carro.caminhoFotos && carro.caminhoFotos.trim() !== ''" [src]="removerPrefixoSrc(carro.caminhoFotos)" alt="Primeira Foto">
         </div>
       </div>
     </div>

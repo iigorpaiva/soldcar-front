@@ -44,4 +44,10 @@ export class CarrosComponent {
       console.log('Carros retornados do serviço:', carros);
     });
   }
+
+  removerPrefixoSrc(caminhoFotos: string): string {
+    console.log("VAMO VER: ", caminhoFotos.replace('src/', '') + '/foto1.webp');
+    // Remove o prefixo "src/" do caminho e concatena com "/foto1.webp"
+    return caminhoFotos.replace('src/', '') + '/foto1.webp';
+  }
 }
